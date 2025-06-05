@@ -1,20 +1,20 @@
 import type React from 'react'
 import { memo } from 'react'
-import { useResponsive } from '../../hooks/useResponsive'
+import { useResponsive } from '../../../hooks/useResponsive'
 
-interface ResponsiveContainerProps {
+interface PanelContainerProps {
 	masterPanel: React.ReactNode
 	detailPanel: React.ReactNode
 	selectedItem: unknown
 	className?: string
 }
 
-const ResponsiveContainer = ({
+const PanelContainer = ({
 	masterPanel,
 	detailPanel,
 	selectedItem,
 	className = '',
-}: ResponsiveContainerProps): React.ReactNode => {
+}: PanelContainerProps): React.ReactNode => {
 	const { isMobile } = useResponsive()
 
 	return (
@@ -57,4 +57,4 @@ const ResponsiveContainer = ({
 	)
 }
 
-export default memo(ResponsiveContainer)
+export default memo(PanelContainer)

@@ -1,9 +1,9 @@
 import type React from 'react'
 import { memo } from 'react'
-import type { Identifiable } from '../../types/Common'
-import Spinner from '../Spinner'
+import type { Identifiable } from '../../../types/Common'
+import Spinner from '../../Spinner'
 
-interface MasterPanelProps<T extends Identifiable> {
+interface ListPanelProps<T extends Identifiable> {
 	items: T[]
 	selectedItem: T | null
 	onSelectItem: (item: T | null) => void
@@ -19,7 +19,7 @@ interface MasterPanelProps<T extends Identifiable> {
 	className?: string
 }
 
-const MasterPanel = <T extends Identifiable>({
+const ListPanel = <T extends Identifiable>({
 	items,
 	selectedItem,
 	onSelectItem,
@@ -29,7 +29,7 @@ const MasterPanel = <T extends Identifiable>({
 	isLoading = false,
 	isVisible = true,
 	className = '',
-}: MasterPanelProps<T>): React.ReactNode => {
+}: ListPanelProps<T>): React.ReactNode => {
 	return (
 		<div
 			className={`flex flex-col h-full ${className}`}
@@ -62,4 +62,4 @@ const MasterPanel = <T extends Identifiable>({
 	)
 }
 
-export default memo(MasterPanel) as typeof MasterPanel
+export default memo(ListPanel) as typeof ListPanel

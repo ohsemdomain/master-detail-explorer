@@ -1,9 +1,9 @@
 import type React from 'react'
 import { memo } from 'react'
-import type { Identifiable } from '../../types/Common'
+import type { Identifiable } from '../../../types/Common'
 import DetailPanel from './DetailPanel'
-import MasterPanel from './MasterPanel'
-import ResponsiveContainer from './ResponsiveContainer'
+import ListPanel from './ListPanel'
+import PanelContainer from './PanelContainer'
 
 interface MasterDetailLayoutProps<T extends Identifiable> {
 	items: T[]
@@ -38,8 +38,8 @@ const MasterDetailLayout = <T extends Identifiable>({
 	isLoadingItems = false,
 	isLoadingDetail = false,
 }: MasterDetailLayoutProps<T>): React.ReactNode => {
-	const masterPanel = (
-		<MasterPanel
+	const listPanel = (
+		<ListPanel
 			items={items}
 			selectedItem={selectedItem}
 			onSelectItem={onSelectItem}
@@ -63,8 +63,8 @@ const MasterDetailLayout = <T extends Identifiable>({
 	)
 
 	return (
-		<ResponsiveContainer
-			masterPanel={masterPanel}
+		<PanelContainer
+			masterPanel={listPanel}
 			detailPanel={detailPanel}
 			selectedItem={selectedItem}
 		/>

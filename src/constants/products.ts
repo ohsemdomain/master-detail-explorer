@@ -9,6 +9,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 2.5,
 		category: 'Packaging Boxes',
 		imageUrl: 'https://picsum.photos/seed/box1/400/300',
+		isActive: true,
 	},
 	{
 		id: 'box2',
@@ -18,6 +19,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 3.25,
 		category: 'Shipping Boxes',
 		imageUrl: 'https://picsum.photos/seed/box2/400/300',
+		isActive: true,
 	},
 	{
 		id: 'box3',
@@ -27,6 +29,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 1.8,
 		category: 'Retail Packaging',
 		imageUrl: 'https://picsum.photos/seed/box3/400/300',
+		isActive: false,
 	},
 	{
 		id: 'box4',
@@ -36,6 +39,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 1.2,
 		category: 'Food Packaging',
 		imageUrl: 'https://picsum.photos/seed/box4/400/300',
+		isActive: true,
 	},
 	{
 		id: 'box5',
@@ -45,6 +49,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 3.9,
 		category: 'Gift Packaging',
 		imageUrl: 'https://picsum.photos/seed/box5/400/300',
+		isActive: true,
 	},
 	{
 		id: 'box6',
@@ -54,6 +59,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 1.6,
 		category: 'Eco Packaging',
 		imageUrl: 'https://picsum.photos/seed/box6/400/300',
+		isActive: false,
 	},
 	{
 		id: 'box7',
@@ -63,6 +69,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 0.95,
 		category: 'Food Packaging',
 		imageUrl: 'https://picsum.photos/seed/box7/400/300',
+		isActive: true,
 	},
 	{
 		id: 'box8',
@@ -72,6 +79,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 2.1,
 		category: 'Retail Packaging',
 		imageUrl: 'https://picsum.photos/seed/box8/400/300',
+		isActive: true,
 	},
 	{
 		id: 'box9',
@@ -81,6 +89,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 1.75,
 		category: 'Display Packaging',
 		imageUrl: 'https://picsum.photos/seed/box9/400/300',
+		isActive: false,
 	},
 	{
 		id: 'box10',
@@ -90,6 +99,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 2.85,
 		category: 'Apparel Packaging',
 		imageUrl: 'https://picsum.photos/seed/box10/400/300',
+		isActive: true,
 	},
 	{
 		id: 'box11',
@@ -99,6 +109,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 5.9,
 		category: 'Luxury Packaging',
 		imageUrl: 'https://picsum.photos/seed/box11/400/300',
+		isActive: true,
 	},
 	{
 		id: 'box12',
@@ -108,6 +119,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 1.05,
 		category: 'Food Packaging',
 		imageUrl: 'https://picsum.photos/seed/box12/400/300',
+		isActive: false,
 	},
 	{
 		id: 'box13',
@@ -117,6 +129,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 2.4,
 		category: 'Retail Packaging',
 		imageUrl: 'https://picsum.photos/seed/box13/400/300',
+		isActive: true,
 	},
 	{
 		id: 'box14',
@@ -126,6 +139,7 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 0.85,
 		category: 'Personal Care Packaging',
 		imageUrl: 'https://picsum.photos/seed/box14/400/300',
+		isActive: true,
 	},
 	{
 		id: 'box15',
@@ -135,5 +149,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 49.0,
 		category: 'Design Service',
 		imageUrl: 'https://picsum.photos/seed/box15/400/300',
+		isActive: false,
 	},
 ]

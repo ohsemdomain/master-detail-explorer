@@ -7,6 +7,7 @@ import Sidebar from './components/layouts/Sidebar'
 import TopBar from './components/layouts/TopBar'
 import { SearchProvider } from './components/layouts/search/SearchProvider'
 import ContactsPage from './pages/ContactsPage'
+import DashboardPage from './pages/DashboardPage'
 import HomePage from './pages/HomePage'
 import ProductsPage from './pages/ProductsPage'
 import './index.css'
@@ -59,6 +60,7 @@ const App: React.FC = () => {
 						<main className="flex-1 container mx-auto px-4 lg:px-8 py-6 overflow-y-auto">
 							<Routes>
 								<Route path="/" element={<HomePage />} />
+								<Route path="/dashboard" element={<DashboardPage />} />
 								<Route path="/products" element={<ProductsPage />} />
 								<Route path="/contacts" element={<ContactsPage />} />
 								<Route path="*" element={<Navigate to="/" />} />

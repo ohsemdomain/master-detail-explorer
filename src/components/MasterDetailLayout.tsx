@@ -1,6 +1,6 @@
 import type React from 'react'
 import { memo } from 'react'
-import type { Identifiable } from '../types'
+import type { Identifiable } from '../types/Common'
 import { ArrowLeftIcon } from './Icons'
 import Spinner from './Spinner'
 

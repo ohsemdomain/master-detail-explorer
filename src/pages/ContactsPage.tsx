@@ -8,9 +8,9 @@ import {
 	PhoneIcon,
 } from '../components/Icons'
 import MasterDetailLayout from '../components/MasterDetailLayout'
-import { CONTACTS_DATA } from '../constants/data'
+import { CONTACTS_DATA } from '../constants/contacts'
 import { useAsyncData } from '../hooks/useAsyncData'
-import type { Contact } from '../types'
+import type { Contact } from '../types/Contact'
 
 const ContactListItem: React.FC<{
 	contact: Contact

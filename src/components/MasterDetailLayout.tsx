@@ -38,7 +38,7 @@ const MasterDetailLayout = <T extends Identifiable>({
 	isLoadingDetail = false,
 }: MasterDetailLayoutProps<T>): React.ReactNode => {
 	return (
-		<div className="relative flex flex-col md:flex-row md:gap-x-6 h-full overflow-hidden md:overflow-visible">
+		<div className="relative flex flex-col lg:flex-row lg:gap-x-6 h-full overflow-hidden lg:overflow-visible">
 			{/* Master List */}
 			<div
 				className={`
@@ -49,13 +49,13 @@ const MasterDetailLayout = <T extends Identifiable>({
 							? 'absolute -translate-x-full opacity-0 pointer-events-none'
 							: 'static translate-x-0 opacity-100 pointer-events-auto flex'
 					}
-          md:w-1/3 lg:w-1/4 md:static md:translate-x-0 md:opacity-100 md:pointer-events-auto md:flex
-          md:transition-none md:transform-none
+          lg:w-1/4 lg:static lg:translate-x-0 lg:opacity-100 lg:pointer-events-auto lg:flex
+          lg:transition-none lg:transform-none
         `}
 				aria-hidden={
 					selectedItem !== null &&
 					typeof window !== 'undefined' &&
-					window.innerWidth < 768
+					window.innerWidth < 1024
 				}
 			>
 				<header className="bg-gray-50 p-4 border-b border-gray-200 flex-shrink-0">
@@ -90,19 +90,19 @@ const MasterDetailLayout = <T extends Identifiable>({
           fixed inset-0 z-50 bg-white shadow-xl
           transition-transform duration-300 ease-in-out
           ${selectedItem !== null ? 'translate-x-0' : 'translate-x-full'}
-          md:static md:z-auto md:w-2/3 lg:w-3/4 md:shadow-lg md:rounded-lg
-          md:translate-x-0 md:transform-none md:transition-none md:flex
+          lg:static lg:z-auto lg:w-3/4 lg:shadow-lg lg:rounded-lg
+          lg:translate-x-0 lg:transform-none lg:transition-none lg:flex
         `}
 				aria-hidden={
 					selectedItem === null &&
 					typeof window !== 'undefined' &&
-					window.innerWidth < 768
+					window.innerWidth < 1024
 				}
 			>
 				{selectedItem ? (
 					<>
 						{/* Mobile Header with Back Button */}
-						<header className="flex-shrink-0 md:hidden bg-gray-50 p-4 border-b border-gray-200 flex items-center sticky top-0 z-10">
+						<header className="flex-shrink-0 lg:hidden bg-gray-50 p-4 border-b border-gray-200 flex items-center sticky top-0 z-10">
 							<button
 								type="button"
 								onClick={() => onSelectItem(null)}
@@ -117,7 +117,7 @@ const MasterDetailLayout = <T extends Identifiable>({
 						</header>
 
 						{/* Desktop Header */}
-						<header className="flex-shrink-0 hidden md:block bg-gray-50 p-4 border-b border-gray-200">
+						<header className="flex-shrink-0 hidden lg:block bg-gray-50 p-4 border-b border-gray-200">
 							<h2 className="text-xl font-semibold text-gray-700">
 								{detailTitle}: {getItemTitle(selectedItem)}
 							</h2>
@@ -135,7 +135,7 @@ const MasterDetailLayout = <T extends Identifiable>({
 						</div>
 					</>
 				) : (
-					<div className="hidden md:flex h-full w-full items-center justify-center text-gray-500">
+					<div className="hidden lg:flex h-full w-full items-center justify-center text-gray-500">
 						<div className="text-center">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"

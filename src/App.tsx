@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar'
 import ContactsPage from './pages/ContactsPage'
 import HomePage from './pages/HomePage'
 import ProductsPage from './pages/ProductsPage'
+import './index.css'
 
 const App: React.FC = () => {
 	const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false)
@@ -24,7 +25,7 @@ const App: React.FC = () => {
 				/>
 				<div className="flex-1 flex flex-col overflow-hidden">
 					{/* Mobile Header */}
-					<header className="md:hidden bg-white shadow-md p-4 sticky top-0 z-20">
+					<header className="lg:hidden bg-white shadow-md p-4 sticky top-0 z-20">
 						{' '}
 						{/* Increased z-index for header */}
 						<div className="container mx-auto flex items-center justify-between">
@@ -45,7 +46,7 @@ const App: React.FC = () => {
 						</div>
 					</header>
 
-					<main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-6 overflow-y-auto">
+					<main className="flex-1 container mx-auto px-4 lg:px-8 py-6 overflow-y-auto">
 						<Routes>
 							<Route path="/" element={<HomePage />} />
 							<Route path="/products" element={<ProductsPage />} />

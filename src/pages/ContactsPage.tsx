@@ -57,7 +57,7 @@ const ContactDetailView: React.FC<{ contact: Contact }> = memo(
 					<p className="text-lg text-gray-600">{contact.company}</p>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 					<InfoCard
 						title="Email Address"
 						value={contact.email}

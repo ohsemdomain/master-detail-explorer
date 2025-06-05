@@ -6,7 +6,6 @@ import {
 	EmailIcon,
 	LocationIcon,
 	PhoneIcon,
-	ZipIcon,
 } from '../components/Icons'
 import MasterDetailLayout from '../components/MasterDetailLayout'
 import { CONTACTS_DATA } from '../constants/data'
@@ -32,21 +31,16 @@ const ContactListItem: React.FC<{
 			onKeyDown={handleKeyDown}
 			tabIndex={0}
 			role="button"
-			className={`flex items-center p-4 border-b border-gray-200 cursor-pointer hover:bg-primary-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 ${
+			className={`p-4 border-b border-gray-200 cursor-pointer hover:bg-primary-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 ${
 				isSelected ? 'bg-primary-100 border-l-4 border-primary-500' : ''
 			}`}
 			aria-selected={isSelected}
 		>
-			<img
-				src={contact.avatarUrl}
-				alt={`${contact.firstName} ${contact.lastName}`}
-				className="w-12 h-12 rounded-full mr-4 object-cover"
-			/>
 			<div>
 				<h3
 					className={`font-semibold ${isSelected ? 'text-primary-700' : 'text-gray-800'}`}
 				>
-					{contact.firstName} {contact.lastName}
+					{contact.name}
 				</h3>
 				<p className="text-sm text-gray-500">{contact.email}</p>
 			</div>
@@ -58,18 +52,11 @@ const ContactDetailView: React.FC<{ contact: Contact }> = memo(
 	({ contact }) => {
 		return (
 			<div className="space-y-6">
-				<div className="flex items-center space-x-6 pb-6 border-b border-gray-200">
-					<img
-						src={contact.avatarUrl}
-						alt={`${contact.firstName} ${contact.lastName}`}
-						className="w-24 h-24 rounded-full shadow-lg object-cover"
-					/>
-					<div>
-						<h2 className="text-3xl font-bold text-primary-700">
-							{contact.firstName} {contact.lastName}
-						</h2>
-						<p className="text-lg text-gray-600">{contact.company}</p>
-					</div>
+				<div className="pb-6 border-b border-gray-200">
+					<h2 className="text-3xl font-bold text-primary-700 mb-2">
+						{contact.name}
+					</h2>
+					<p className="text-lg text-gray-600">{contact.company}</p>
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -84,15 +71,20 @@ const ContactDetailView: React.FC<{ contact: Contact }> = memo(
 						icon={PhoneIcon}
 					/>
 					<InfoCard
-						title="Street Address"
-						value={contact.address.street}
+						title="Address Line 1"
+						value={contact.address.address_line1}
 						icon={LocationIcon}
 					/>
 					<InfoCard title="City" value={contact.address.city} icon={CityIcon} />
 					<InfoCard
-						title="ZIP Code"
-						value={contact.address.zipCode}
-						icon={ZipIcon}
+						title="State"
+						value={contact.address.state}
+						icon={LocationIcon}
+					/>
+					<InfoCard
+						title="Postcode"
+						value={contact.address.postcode}
+						icon={LocationIcon}
 					/>
 					<InfoCard
 						title="Country"
@@ -189,7 +181,7 @@ const ContactsPage: React.FC = () => {
 
 	const itemKeyExtractor = useCallback((contact: Contact) => contact.id, [])
 	const getItemTitle = useCallback(
-		(contact: Contact) => `${contact.firstName} ${contact.lastName}`,
+		(contact: Contact) => contact.name,
 		[],
 	)
 

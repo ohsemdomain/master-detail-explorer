@@ -9,18 +9,20 @@ export interface Product {
 
 export interface Contact {
 	id: string
-	firstName: string
-	lastName: string
+	name: string
 	email: string
 	phone: string
 	address: {
-		street: string
+		address_line1: string
+		address_line2: string
+		address_line3: string
+		address_line4: string
 		city: string
-		zipCode: string
+		state: string
+		postcode: string
 		country: string
 	}
 	company: string
-	avatarUrl: string
 }
 
 // Generic type for MasterDetailLayout items, ensuring they have an 'id'

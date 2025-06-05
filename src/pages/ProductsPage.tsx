@@ -131,7 +131,7 @@ const ProductsPage: React.FC = () => {
 			products.length > 0 &&
 			!selectedProduct &&
 			typeof window !== 'undefined' &&
-			window.innerWidth >= 768 // Tailwind's 'md' breakpoint
+			window.innerWidth >= 1024 // Tailwind's 'lg' breakpoint - only auto-select on desktop
 		) {
 			handleSelectProduct(products[0])
 		}

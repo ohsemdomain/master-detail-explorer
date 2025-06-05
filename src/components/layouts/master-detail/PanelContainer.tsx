@@ -19,7 +19,7 @@ const PanelContainer = ({
 
 	return (
 		<div
-			className={`relative flex flex-col lg:flex-row lg:gap-x-6 h-full overflow-hidden lg:overflow-visible ${className}`}
+			className={`relative flex flex-col lg:flex-row lg:gap-x-6 h-full lg:overflow-visible ${className}`}
 		>
 			{/* Master Panel */}
 			<div

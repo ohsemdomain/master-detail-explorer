@@ -154,7 +154,7 @@ const ContactsPage: React.FC = () => {
 			contacts.length > 0 &&
 			!selectedContact &&
 			typeof window !== 'undefined' &&
-			window.innerWidth >= 768 // Tailwind's 'md' breakpoint
+			window.innerWidth >= 1024 // Tailwind's 'lg' breakpoint - only auto-select on desktop
 		) {
 			handleSelectContact(contacts[0])
 		}

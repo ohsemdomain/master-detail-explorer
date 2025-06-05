@@ -6,9 +6,9 @@ import { MenuIcon } from './components/Icons'
 import Sidebar from './components/layouts/Sidebar'
 import TopBar from './components/layouts/TopBar'
 import { SearchProvider } from './components/layouts/search/SearchProvider'
-import ContactsPage from './pages/ContactsPage'
+import ContactsPage from './features/contacts/pages/ContactsPage'
 import DashboardPage from './pages/DashboardPage'
-import ProductsPage from './pages/ProductsPage'
+import ProductsPage from './features/products/pages/ProductsPage'
 import './index.css'
 
 const App: React.FC = () => {

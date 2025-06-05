@@ -2,7 +2,7 @@ import type React from 'react'
 import { memo, useCallback, useEffect, useState } from 'react'
 import MasterDetailLayout from '../components/layouts/master-detail/MasterDetailLayout'
 import { PRODUCTS_DATA } from '../../trpc/data/products'
-import { useAsyncData } from '../hooks/useAsyncData'
+import { useLoader } from '../components/loader/useLoader'
 import type { Product } from '../../shared/types/Product'
 
 const ProductListItem: React.FC<{
@@ -94,7 +94,7 @@ const ProductsPage: React.FC = () => {
 	const [isLoadingDetail, setIsLoadingDetail] = useState<boolean>(false)
 
 	// Use custom hook for data fetching
-	const { data: products, loading: isLoading } = useAsyncData(
+	const { data: products, loading: isLoading } = useLoader(
 		() => PRODUCTS_DATA,
 		[],
 		{ delay: 1500 },

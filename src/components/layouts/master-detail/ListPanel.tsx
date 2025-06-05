@@ -1,7 +1,7 @@
 import type React from 'react'
 import { memo } from 'react'
 import type { Identifiable } from './types'
-import Spinner from '../../Spinner'
+import Spinner from '../../loader/Spinner'
 
 interface ListPanelProps<T extends Identifiable> {
 	items: T[]

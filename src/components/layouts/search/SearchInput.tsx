@@ -1,7 +1,7 @@
 import type React from 'react'
 import { memo, useEffect, useRef, useState } from 'react'
 import { SearchIcon, XIcon } from '../../Icons'
-import { useSearchContext } from '../../../hooks/useSearchContext'
+import { useSearchContext } from './useSearchContext'
 
 interface SearchInputProps {
 	className?: string

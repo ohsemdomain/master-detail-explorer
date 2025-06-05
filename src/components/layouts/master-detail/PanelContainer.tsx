@@ -1,6 +1,6 @@
 import type React from 'react'
 import { memo } from 'react'
-import { useResponsive } from '../../../hooks/useResponsive'
+import { useResponsive } from '../useResponsive'
 
 interface PanelContainerProps {
 	masterPanel: React.ReactNode

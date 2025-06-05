@@ -2,7 +2,7 @@ import type React from 'react'
 import { memo } from 'react'
 import type { Identifiable } from './types'
 import { ArrowLeftIcon } from '../../Icons'
-import Spinner from '../../Spinner'
+import Spinner from '../../loader/Spinner'
 
 interface DetailPanelProps<T extends Identifiable> {
 	selectedItem: T | null

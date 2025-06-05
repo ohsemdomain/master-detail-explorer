@@ -1,5 +1,5 @@
 import type React from 'react'
-import { SpinnerIcon } from './Icons'
+import { SpinnerIcon } from '../Icons'
 
 interface SpinnerProps {
 	message?: string

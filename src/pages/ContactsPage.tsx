@@ -9,7 +9,7 @@ import {
 } from '../components/Icons'
 import MasterDetailLayout from '../components/layouts/master-detail/MasterDetailLayout'
 import { CONTACTS_DATA } from '../../trpc/data/contacts'
-import { useAsyncData } from '../hooks/useAsyncData'
+import { useLoader } from '../components/loader/useLoader'
 import type { Contact } from '../../shared/types/Contact'
 
 const ContactListItem: React.FC<{
@@ -119,7 +119,7 @@ const ContactsPage: React.FC = () => {
 	const [isLoadingDetail, setIsLoadingDetail] = useState<boolean>(false)
 
 	// Use custom hook for data fetching
-	const { data: contacts, loading: isLoading } = useAsyncData(
+	const { data: contacts, loading: isLoading } = useLoader(
 		() => CONTACTS_DATA,
 		[],
 		{ delay: 1500 },

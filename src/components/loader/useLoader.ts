@@ -1,23 +1,23 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-interface UseAsyncDataState<T> {
+interface UseLoaderState<T> {
 	data: T | null
 	loading: boolean
 	error: Error | null
 }
 
-interface UseAsyncDataOptions {
+interface UseLoaderOptions {
 	immediate?: boolean
 	delay?: number
 }
 
-export function useAsyncData<T>(
+export function useLoader<T>(
 	asyncFunction: () => Promise<T> | T,
 	dependencies: React.DependencyList = [],
-	options: UseAsyncDataOptions = {},
-): UseAsyncDataState<T> & { refetch: () => Promise<void> } {
+	options: UseLoaderOptions = {},
+): UseLoaderState<T> & { refetch: () => Promise<void> } {
 	const { immediate = true, delay = 0 } = options
-	const [state, setState] = useState<UseAsyncDataState<T>>({
+	const [state, setState] = useState<UseLoaderState<T>>({
 		data: null,
 		loading: immediate,
 		error: null,

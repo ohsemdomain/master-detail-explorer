@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom'
-import type { SearchScope } from '../components/layouts/search/SearchProvider'
+import type { SearchScope } from './SearchProvider'
 
 interface SearchContextConfig {
   scope: SearchScope

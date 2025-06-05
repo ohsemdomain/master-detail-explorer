@@ -1,9 +1,9 @@
 import type React from 'react'
 import { memo, useCallback, useEffect, useState } from 'react'
 import MasterDetailLayout from '../components/layouts/master-detail/MasterDetailLayout'
-import { PRODUCTS_DATA } from '../constants/products'
+import { PRODUCTS_DATA } from '../../trpc/data/products'
 import { useAsyncData } from '../hooks/useAsyncData'
-import type { Product } from '../types/Product'
+import type { Product } from '../../shared/types/Product'
 
 const ProductListItem: React.FC<{
 	product: Product

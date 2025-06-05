@@ -1,4 +1,4 @@
-import type { Product } from '../types/Product'
+import type { Product } from '../../shared/types/Product'
 
 export const PRODUCTS_DATA: Product[] = [
 	{

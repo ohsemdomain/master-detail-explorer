@@ -1,6 +1,5 @@
-import type { Identifiable } from './Common'
-
-export interface Product extends Identifiable {
+export interface Product {
+	id: string
 	name: string
 	description: string
 	price: number

@@ -1,4 +1,4 @@
-import type { Contact } from '../types/Contact'
+import type { Contact } from '../../shared/types/Contact'
 
 export const CONTACTS_DATA: Contact[] = [
 	{

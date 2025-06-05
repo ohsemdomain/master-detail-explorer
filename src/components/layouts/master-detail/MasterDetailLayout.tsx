@@ -1,6 +1,6 @@
 import type React from 'react'
 import { memo } from 'react'
-import type { Identifiable } from '../../../types/Common'
+import type { Identifiable } from './types'
 import DetailPanel from './DetailPanel'
 import ListPanel from './ListPanel'
 import PanelContainer from './PanelContainer'

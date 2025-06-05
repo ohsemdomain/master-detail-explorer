@@ -55,3 +55,12 @@
 		}
 	}
 }
+
+@layer utility {
+
+	input,
+	textarea,
+	button {
+		@apply focus:outline-none;
+	}
+}

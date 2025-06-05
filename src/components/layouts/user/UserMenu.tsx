@@ -41,12 +41,7 @@ const UserMenu = ({ className = '' }: UserMenuProps): React.ReactNode => {
 			<button
 				type="button"
 				onClick={toggleMenu}
-				className="
-          flex items-center gap-3 p-2 text-sm
-          bg-white border border-gray-300 rounded-lg
-          hover:bg-gray-50 focus:ring-2 focus:ring-primary-500
-          transition-colors duration-150
-        "
+				className="flex items-center gap-3 p-2 text-sm bg-white border border-gray-300 rounded-lg transition-colors duration-150"
 				aria-label="User menu"
 				aria-expanded={isOpen}
 			>

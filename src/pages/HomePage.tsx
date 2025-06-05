@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
 			<h1 className="text-4xl font-bold text-primary-700 mb-6">
 				Welcome to Master-Detail Explorer
 			</h1>
-			<p className="text-lg text-gray-600 mb-8">
+			<p className="text-lg text-gray-600 mb-8 font-mono text-xs">
 				This application demonstrates a responsive master-detail layout pattern.
 				Explore product listings and contact directories with ease.
 			</p>

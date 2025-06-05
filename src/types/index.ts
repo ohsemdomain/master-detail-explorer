@@ -5,8 +5,6 @@ export interface Product {
 	price: number
 	category: string
 	imageUrl: string
-	stock: number
-	rating: number
 }
 
 export interface Contact {

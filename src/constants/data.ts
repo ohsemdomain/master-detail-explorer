@@ -9,8 +9,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 24.99,
 		category: 'Accessories',
 		imageUrl: 'https://picsum.photos/seed/prod1/400/300',
-		stock: 150,
-		rating: 4.5,
 	},
 	{
 		id: 'prod2',
@@ -20,8 +18,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 199.5,
 		category: 'Electronics',
 		imageUrl: 'https://picsum.photos/seed/prod2/400/300',
-		stock: 75,
-		rating: 4.8,
 	},
 	{
 		id: 'prod3',
@@ -31,8 +27,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 35.0,
 		category: 'Apparel',
 		imageUrl: 'https://picsum.photos/seed/prod3/400/300',
-		stock: 200,
-		rating: 4.2,
 	},
 	{
 		id: 'prod4',
@@ -42,8 +36,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 89.99,
 		category: 'Wearables',
 		imageUrl: 'https://picsum.photos/seed/prod4/400/300',
-		stock: 120,
-		rating: 4.6,
 	},
 	{
 		id: 'prod5',
@@ -53,8 +45,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 18.75,
 		category: 'Groceries',
 		imageUrl: 'https://picsum.photos/seed/prod5/400/300',
-		stock: 300,
-		rating: 4.9,
 	},
 	{
 		id: 'prod6',
@@ -64,8 +54,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 89.99,
 		category: 'Electronics',
 		imageUrl: 'https://picsum.photos/seed/prod6/400/300',
-		stock: 85,
-		rating: 4.4,
 	},
 	{
 		id: 'prod7',
@@ -75,8 +63,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 29.99,
 		category: 'Accessories',
 		imageUrl: 'https://picsum.photos/seed/prod7/400/300',
-		stock: 180,
-		rating: 4.3,
 	},
 	{
 		id: 'prod8',
@@ -86,8 +72,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 65.00,
 		category: 'Sports',
 		imageUrl: 'https://picsum.photos/seed/prod8/400/300',
-		stock: 95,
-		rating: 4.7,
 	},
 	{
 		id: 'prod9',
@@ -97,8 +81,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 39.99,
 		category: 'Electronics',
 		imageUrl: 'https://picsum.photos/seed/prod9/400/300',
-		stock: 140,
-		rating: 4.5,
 	},
 	{
 		id: 'prod10',
@@ -108,8 +90,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 42.50,
 		category: 'Groceries',
 		imageUrl: 'https://picsum.photos/seed/prod10/400/300',
-		stock: 60,
-		rating: 4.8,
 	},
 	{
 		id: 'prod11',
@@ -119,8 +99,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 55.00,
 		category: 'Home & Kitchen',
 		imageUrl: 'https://picsum.photos/seed/prod11/400/300',
-		stock: 110,
-		rating: 4.6,
 	},
 	{
 		id: 'prod12',
@@ -130,8 +108,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 79.99,
 		category: 'Home & Kitchen',
 		imageUrl: 'https://picsum.photos/seed/prod12/400/300',
-		stock: 75,
-		rating: 4.4,
 	},
 	{
 		id: 'prod13',
@@ -141,8 +117,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 68.00,
 		category: 'Apparel',
 		imageUrl: 'https://picsum.photos/seed/prod13/400/300',
-		stock: 45,
-		rating: 4.7,
 	},
 	{
 		id: 'prod14',
@@ -152,8 +126,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 125.99,
 		category: 'Electronics',
 		imageUrl: 'https://picsum.photos/seed/prod14/400/300',
-		stock: 90,
-		rating: 4.6,
 	},
 	{
 		id: 'prod15',
@@ -163,8 +135,6 @@ export const PRODUCTS_DATA: Product[] = [
 		price: 89.95,
 		category: 'Health & Beauty',
 		imageUrl: 'https://picsum.photos/seed/prod15/400/300',
-		stock: 65,
-		rating: 4.8,
 	},
 ]
 

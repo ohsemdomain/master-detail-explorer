@@ -67,23 +67,9 @@ const ProductDetailView: React.FC<{ product: Product }> = memo(
 					<p className="text-gray-600 leading-relaxed">{product.description}</p>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-					<div className="bg-gray-50 p-4 rounded-lg shadow">
-						<h4 className="font-semibold text-gray-700">Category</h4>
-						<p className="text-gray-600">{product.category}</p>
-					</div>
-					<div className="bg-gray-50 p-4 rounded-lg shadow">
-						<h4 className="font-semibold text-gray-700">Stock</h4>
-						<p className="text-gray-600">
-							{product.stock > 0
-								? `${product.stock} units available`
-								: 'Out of Stock'}
-						</p>
-					</div>
-					<div className="bg-gray-50 p-4 rounded-lg shadow">
-						<h4 className="font-semibold text-gray-700">Rating</h4>
-						<p className="text-gray-600">{product.rating} / 5</p>
-					</div>
+				<div className="bg-gray-50 p-4 rounded-lg shadow">
+					<h4 className="font-semibold text-gray-700">Category</h4>
+					<p className="text-gray-600">{product.category}</p>
 				</div>
 			</div>
 		)

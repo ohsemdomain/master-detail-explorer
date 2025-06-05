@@ -189,11 +189,10 @@ const ContactsPage: React.FC = () => {
 			renderDetail={renderDetail}
 			listTitle="All Contacts"
 			detailTitle="Contact Details"
-			placeholderText="Select a contact to see their information."
 			itemKeyExtractor={itemKeyExtractor}
 			getItemTitle={getItemTitle}
 			isLoadingItems={isLoading}
-			isLoadingDetail={isLoadingDetail}
+			isLoadingDetail={isLoading || isLoadingDetail}
 		/>
 	)
 }

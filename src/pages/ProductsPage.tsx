@@ -166,11 +166,10 @@ const ProductsPage: React.FC = () => {
 			renderDetail={renderDetail}
 			listTitle="All Products"
 			detailTitle="Product Details"
-			placeholderText="Select a product to see its details."
 			itemKeyExtractor={itemKeyExtractor}
 			getItemTitle={getItemTitle}
 			isLoadingItems={isLoading}
-			isLoadingDetail={isLoadingDetail}
+			isLoadingDetail={isLoading || isLoadingDetail}
 		/>
 	)
 }

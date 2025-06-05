@@ -17,7 +17,6 @@ interface MasterDetailLayoutProps<T extends Identifiable> {
 	renderDetail: (item: T) => React.ReactNode
 	listTitle: string
 	detailTitle: string
-	placeholderText?: string
 	itemKeyExtractor: (item: T) => string | number
 	getItemTitle: (item: T) => string
 	isLoadingItems?: boolean
@@ -32,7 +31,6 @@ const MasterDetailLayout = <T extends Identifiable>({
 	renderDetail,
 	listTitle,
 	detailTitle,
-	placeholderText = 'Select an item to view details.',
 	itemKeyExtractor,
 	getItemTitle,
 	isLoadingItems = false,
@@ -56,7 +54,6 @@ const MasterDetailLayout = <T extends Identifiable>({
 			onSelectItem={onSelectItem}
 			renderDetail={renderDetail}
 			detailTitle={detailTitle}
-			placeholderText={placeholderText}
 			getItemTitle={getItemTitle}
 			isLoading={isLoadingDetail}
 		/>

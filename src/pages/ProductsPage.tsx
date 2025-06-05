@@ -22,8 +22,6 @@ const ProductListItem: React.FC<{
 			key={product.id}
 			onClick={onSelect}
 			onKeyDown={handleKeyDown}
-			tabIndex={0}
-			role="button"
 			aria-selected={isSelected}
 			className={`p-4 border-b border-gray-200 cursor-pointer hover:bg-primary-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 ${
 				isSelected ? 'bg-primary-100 border-l-4 border-primary-500' : ''

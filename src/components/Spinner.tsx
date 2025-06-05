@@ -13,8 +13,7 @@ const Spinner: React.FC<SpinnerProps> = ({
 	textClassName = 'text-lg text-gray-600 mt-4',
 }) => {
 	return (
-		<div
-			role="status"
+		<output
 			className="flex flex-col items-center justify-center"
 			aria-live="polite"
 			aria-busy="true"
@@ -22,7 +21,7 @@ const Spinner: React.FC<SpinnerProps> = ({
 			<SpinnerIcon className={iconClassName} />
 			{message && <p className={textClassName}>{message}</p>}
 			<span className="sr-only">{message}</span>
-		</div>
+		</output>
 	)
 }
 

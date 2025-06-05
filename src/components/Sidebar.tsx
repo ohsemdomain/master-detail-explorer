@@ -20,14 +20,16 @@ const Sidebar: React.FC<SidebarProps> = ({
 	return (
 		<>
 			{/* Backdrop for mobile */}
-			<div
+			<button
+				type="button"
 				className={`fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden transition-opacity duration-300 ease-in-out ${
 					isMobileOpen
 						? 'opacity-100 pointer-events-auto'
 						: 'opacity-0 pointer-events-none'
 				}`}
 				onClick={toggleMobileSidebar}
-				aria-hidden="true"
+				aria-label="Close sidebar"
+				tabIndex={isMobileOpen ? 0 : -1}
 			/>
 
 			{/* Sidebar itself */}

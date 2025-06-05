@@ -29,8 +29,6 @@ const ContactListItem: React.FC<{
 			key={contact.id}
 			onClick={onSelect}
 			onKeyDown={handleKeyDown}
-			tabIndex={0}
-			role="button"
 			className={`p-4 border-b border-gray-200 cursor-pointer hover:bg-primary-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 ${
 				isSelected ? 'bg-primary-100 border-l-4 border-primary-500' : ''
 			}`}
@@ -180,10 +178,7 @@ const ContactsPage: React.FC = () => {
 	)
 
 	const itemKeyExtractor = useCallback((contact: Contact) => contact.id, [])
-	const getItemTitle = useCallback(
-		(contact: Contact) => contact.name,
-		[],
-	)
+	const getItemTitle = useCallback((contact: Contact) => contact.name, [])
 
 	return (
 		<MasterDetailLayout<Contact>

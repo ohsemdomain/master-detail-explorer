@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 interface UseAsyncDataState<T> {
 	data: T | null
@@ -23,6 +23,10 @@ export function useAsyncData<T>(
 		error: null,
 	})
 
+	// Store the latest function reference to avoid stale closures
+	const asyncFunctionRef = useRef(asyncFunction)
+	asyncFunctionRef.current = asyncFunction
+
 	const execute = useCallback(async () => {
 		setState((prev) => ({ ...prev, loading: true, error: null }))
 
@@ -31,7 +35,8 @@ export function useAsyncData<T>(
 				await new Promise((resolve) => setTimeout(resolve, delay))
 			}
 
-			const result = await Promise.resolve(asyncFunction())
+			// Always call the latest function reference
+			const result = await Promise.resolve(asyncFunctionRef.current())
 			setState({ data: result, loading: false, error: null })
 		} catch (error) {
 			setState({
@@ -40,7 +45,7 @@ export function useAsyncData<T>(
 				error: error instanceof Error ? error : new Error(String(error)),
 			})
 		}
-	}, dependencies)
+	}, [delay, ...dependencies])
 
 	useEffect(() => {
 		if (immediate) {

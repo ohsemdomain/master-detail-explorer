@@ -1,6 +1,6 @@
 import type React from 'react'
 import { memo, useCallback, useEffect, useState } from 'react'
-import MasterDetailLayout from '../components/MasterDetailLayout'
+import MasterDetailLayout from '../components/layouts/MasterDetailLayout'
 import { PRODUCTS_DATA } from '../constants/products'
 import { useAsyncData } from '../hooks/useAsyncData'
 import type { Product } from '../types/Product'

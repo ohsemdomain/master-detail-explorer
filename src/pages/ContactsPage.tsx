@@ -7,7 +7,7 @@ import {
 	LocationIcon,
 	PhoneIcon,
 } from '../components/Icons'
-import MasterDetailLayout from '../components/MasterDetailLayout'
+import MasterDetailLayout from '../components/layouts/MasterDetailLayout'
 import { CONTACTS_DATA } from '../constants/contacts'
 import { useAsyncData } from '../hooks/useAsyncData'
 import type { Contact } from '../types/Contact'

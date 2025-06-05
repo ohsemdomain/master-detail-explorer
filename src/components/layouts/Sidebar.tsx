@@ -1,6 +1,6 @@
 import type React from 'react'
 import { NavLink } from 'react-router-dom'
-import { XIcon } from './Icons'
+import { XIcon } from '../Icons'
 
 interface SidebarProps {
 	isMobileOpen: boolean

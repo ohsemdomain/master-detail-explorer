@@ -1,17 +1,18 @@
 import type React from 'react'
-import { memo, useState } from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
 import { SearchIcon, XIcon } from '../../Icons'
+import { useSearchContext } from '../../../hooks/useSearchContext'
 
 interface SearchInputProps {
-	placeholder?: string
 	className?: string
 }
 
 const SearchInput = ({
-	placeholder = 'Search...',
 	className = '',
 }: SearchInputProps): React.ReactNode => {
 	const [searchTerm, setSearchTerm] = useState('')
+	const inputRef = useRef<HTMLInputElement>(null)
+	const searchContext = useSearchContext()
 
 	const handleClear = () => {
 		setSearchTerm('')
@@ -20,6 +21,28 @@ const SearchInput = ({
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setSearchTerm(e.target.value)
 	}
+
+	// Keyboard shortcut support
+	useEffect(() => {
+		const handleKeyDown = (event: KeyboardEvent) => {
+			// Check for "/" key to focus search (like GitHub, Twitter, etc.)
+			if (event.key === searchContext.shortcut && !event.ctrlKey && !event.metaKey) {
+				// Only trigger if not already focused on an input/textarea
+				const activeElement = document.activeElement
+				const isInputFocused = activeElement?.tagName === 'INPUT' || 
+				                      activeElement?.tagName === 'TEXTAREA' ||
+				                      activeElement?.getAttribute('contenteditable') === 'true'
+				
+				if (!isInputFocused) {
+					event.preventDefault()
+					inputRef.current?.focus()
+				}
+			}
+		}
+
+		document.addEventListener('keydown', handleKeyDown)
+		return () => document.removeEventListener('keydown', handleKeyDown)
+	}, [searchContext.shortcut])
 
 	return (
 		<div className={`relative ${className}`}>
@@ -31,10 +54,11 @@ const SearchInput = ({
 
 				{/* Input Field */}
 				<input
+					ref={inputRef}
 					type="text"
 					value={searchTerm}
 					onChange={handleChange}
-					placeholder={placeholder}
+					placeholder={searchContext.placeholder}
 					className="
             block w-full pl-10 pr-10 py-2.5 
             border border-gray-300 rounded-lg

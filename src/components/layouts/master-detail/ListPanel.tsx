@@ -40,7 +40,7 @@ const ListPanel = <T extends Identifiable>({
 			</header>
 			{isLoading ? (
 				<div className="flex-grow flex flex-col items-center justify-center p-4 rounded-b-lg">
-					<Spinner message="Loading items..." />
+					<Spinner />
 				</div>
 			) : items.length === 0 ? (
 				<div className="p-4 text-gray-500 text-center flex-grow flex items-center justify-center rounded-b-lg">

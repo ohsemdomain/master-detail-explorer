@@ -59,7 +59,7 @@ const DetailPanel = <T extends Identifiable>({
 					<div className="p-6 overflow-y-auto flex-grow scrollbar-modern">
 						{isLoading ? (
 							<div className="flex h-full w-full items-center justify-center">
-								<Spinner message="Loading details..." />
+								<Spinner />
 							</div>
 						) : (
 							renderDetail(selectedItem)

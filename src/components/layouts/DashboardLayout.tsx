@@ -18,7 +18,7 @@ const DashboardLayout = ({
 	className = '',
 }: DashboardLayoutProps): React.ReactNode => {
 	return (
-		<BaseLayout className={`p-6 ${className}`}>
+		<BaseLayout className={`${className}`}>
 			{(title || subtitle || actions) && (
 				<header className="mb-6">
 					<div className="flex items-center justify-between">

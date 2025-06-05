@@ -27,7 +27,7 @@ const App: React.FC = () => {
 						isMobileOpen={isMobileSidebarOpen}
 						toggleMobileSidebar={toggleMobileSidebar}
 					/>
-					
+
 					{/* Main Content Area */}
 					<div className="flex-1 flex flex-col overflow-hidden">
 						{/* Mobile Header */}

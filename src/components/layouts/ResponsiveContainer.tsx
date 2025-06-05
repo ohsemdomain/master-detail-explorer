@@ -31,7 +31,7 @@ const ResponsiveContainer = ({
 							? 'absolute -translate-x-full opacity-0 pointer-events-none'
 							: 'static translate-x-0 opacity-100 pointer-events-auto flex'
 					}
-          lg:w-1/4 lg:static lg:translate-x-0 lg:opacity-100 lg:pointer-events-auto lg:flex
+          lg:w-2/5 lg:static lg:translate-x-0 lg:opacity-100 lg:pointer-events-auto lg:flex
           lg:transition-none lg:transform-none
         `}
 				aria-hidden={selectedItem !== null && isMobile}
@@ -46,7 +46,7 @@ const ResponsiveContainer = ({
           fixed inset-0 z-50 bg-white shadow-xl
           transition-transform duration-300 ease-in-out
           ${selectedItem !== null ? 'translate-x-0' : 'translate-x-full'}
-          lg:static lg:z-auto lg:w-3/4 lg:shadow-lg lg:rounded-lg
+          lg:static lg:z-auto lg:w-3/5 lg:shadow-lg lg:rounded-lg
           lg:translate-x-0 lg:transform-none lg:transition-none lg:flex
         `}
 				aria-hidden={selectedItem === null && isMobile}

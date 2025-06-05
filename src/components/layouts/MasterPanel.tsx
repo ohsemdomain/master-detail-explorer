@@ -35,19 +35,19 @@ const MasterPanel = <T extends Identifiable>({
 			className={`flex flex-col h-full ${className}`}
 			aria-hidden={!isVisible}
 		>
-			<header className="bg-gray-50 p-4 border-b border-gray-200 flex-shrink-0">
+			<header className="bg-gray-50 p-4 border-b border-gray-200 flex-shrink-0 rounded-t-lg">
 				<h2 className="text-xl font-semibold text-gray-700">{listTitle}</h2>
 			</header>
 			{isLoading ? (
-				<div className="flex-grow flex flex-col items-center justify-center p-4">
+				<div className="flex-grow flex flex-col items-center justify-center p-4 rounded-b-lg">
 					<Spinner message="Loading items..." />
 				</div>
 			) : items.length === 0 ? (
-				<div className="p-4 text-gray-500 text-center flex-grow flex items-center justify-center">
+				<div className="p-4 text-gray-500 text-center flex-grow flex items-center justify-center rounded-b-lg">
 					No items available.
 				</div>
 			) : (
-				<ul className="overflow-y-auto flex-grow">
+				<ul className="overflow-y-auto flex-grow rounded-b-lg scrollbar-modern">
 					{items.map((item) =>
 						renderListItem(
 							item,

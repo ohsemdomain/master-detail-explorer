@@ -12,10 +12,10 @@ export const useProductForm = (_initialProduct?: Product) => {
 		try {
 			// TODO: Implement actual save logic
 			console.log('Saving product:', productData)
-			
+
 			// Simulate API call
-			await new Promise(resolve => setTimeout(resolve, 1000))
-			
+			await new Promise((resolve) => setTimeout(resolve, 1000))
+
 			return { success: true }
 		} catch (error) {
 			setErrors({ general: 'Failed to save product' })
@@ -27,14 +27,14 @@ export const useProductForm = (_initialProduct?: Product) => {
 
 	const handleDelete = async (productId: string) => {
 		setIsLoading(true)
-		
+
 		try {
 			// TODO: Implement actual delete logic
 			console.log('Deleting product:', productId)
-			
+
 			// Simulate API call
-			await new Promise(resolve => setTimeout(resolve, 500))
-			
+			await new Promise((resolve) => setTimeout(resolve, 500))
+
 			return { success: true }
 		} catch (error) {
 			setErrors({ general: 'Failed to delete product' })
@@ -49,6 +49,6 @@ export const useProductForm = (_initialProduct?: Product) => {
 		errors,
 		handleSave,
 		handleDelete,
-		clearErrors: () => setErrors({})
+		clearErrors: () => setErrors({}),
 	}
 }

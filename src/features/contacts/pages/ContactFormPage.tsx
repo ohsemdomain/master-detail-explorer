@@ -1,7 +1,7 @@
 import type React from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import ContactForm from '../components/ContactForm'
+import { useNavigate, useParams } from 'react-router-dom'
 import type { Contact } from '../../../../shared/types/Contact'
+import ContactForm from '../components/ContactForm'
 
 const ContactFormPage: React.FC = () => {
 	const { id: _id } = useParams<{ id: string }>()

@@ -6,9 +6,11 @@ import { MenuIcon } from './components/Icons'
 import Sidebar from './components/layouts/Sidebar'
 import TopBar from './components/layouts/TopBar'
 import { SearchProvider } from './components/layouts/search/SearchProvider'
+import ContactFormPage from './features/contacts/pages/ContactFormPage'
 import ContactsPage from './features/contacts/pages/ContactsPage'
-import DashboardPage from './pages/DashboardPage'
+import ProductFormPage from './features/products/pages/ProductFormPage'
 import ProductsPage from './features/products/pages/ProductsPage'
+import DashboardPage from './pages/DashboardPage'
 import './index.css'
 
 const App: React.FC = () => {
@@ -60,7 +62,17 @@ const App: React.FC = () => {
 							<Routes>
 								<Route path="/" element={<DashboardPage />} />
 								<Route path="/products" element={<ProductsPage />} />
+								<Route path="/products/new" element={<ProductFormPage />} />
+								<Route
+									path="/products/:id/edit"
+									element={<ProductFormPage />}
+								/>
 								<Route path="/contacts" element={<ContactsPage />} />
+								<Route path="/contacts/new" element={<ContactFormPage />} />
+								<Route
+									path="/contacts/:id/edit"
+									element={<ContactFormPage />}
+								/>
 								<Route path="*" element={<Navigate to="/" />} />
 							</Routes>
 						</main>

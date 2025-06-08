@@ -7,9 +7,7 @@ interface SearchInputProps {
 	className?: string
 }
 
-const SearchInput = ({
-	className = '',
-}: SearchInputProps): React.ReactNode => {
+const SearchInput = ({ className = '' }: SearchInputProps): React.ReactNode => {
 	const [searchTerm, setSearchTerm] = useState('')
 	const inputRef = useRef<HTMLInputElement>(null)
 	const searchContext = useSearchContext()
@@ -26,13 +24,18 @@ const SearchInput = ({
 	useEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
 			// Check for "/" key to focus search (like GitHub, Twitter, etc.)
-			if (event.key === searchContext.shortcut && !event.ctrlKey && !event.metaKey) {
+			if (
+				event.key === searchContext.shortcut &&
+				!event.ctrlKey &&
+				!event.metaKey
+			) {
 				// Only trigger if not already focused on an input/textarea
 				const activeElement = document.activeElement
-				const isInputFocused = activeElement?.tagName === 'INPUT' || 
-				                      activeElement?.tagName === 'TEXTAREA' ||
-				                      activeElement?.getAttribute('contenteditable') === 'true'
-				
+				const isInputFocused =
+					activeElement?.tagName === 'INPUT' ||
+					activeElement?.tagName === 'TEXTAREA' ||
+					activeElement?.getAttribute('contenteditable') === 'true'
+
 				if (!isInputFocused) {
 					event.preventDefault()
 					inputRef.current?.focus()

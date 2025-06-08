@@ -1,7 +1,7 @@
 import type React from 'react'
 import { memo } from 'react'
-import type { Identifiable } from './types'
 import Spinner from '../../loader/Spinner'
+import type { Identifiable } from './types'
 
 interface ListPanelProps<T extends Identifiable> {
 	items: T[]
@@ -17,6 +17,7 @@ interface ListPanelProps<T extends Identifiable> {
 	isLoading?: boolean
 	isVisible?: boolean
 	className?: string
+	headerAction?: React.ReactNode
 }
 
 const ListPanel = <T extends Identifiable>({
@@ -29,6 +30,7 @@ const ListPanel = <T extends Identifiable>({
 	isLoading = false,
 	isVisible = true,
 	className = '',
+	headerAction,
 }: ListPanelProps<T>): React.ReactNode => {
 	return (
 		<div
@@ -36,7 +38,10 @@ const ListPanel = <T extends Identifiable>({
 			aria-hidden={!isVisible}
 		>
 			<header className="bg-gray-50 p-4 border-b border-gray-200 flex-shrink-0 rounded-t-lg">
-				<h2 className="text-xl font-semibold text-gray-700">{listTitle}</h2>
+				<div className="flex items-center justify-between">
+					<h2 className="text-xl font-semibold text-gray-700">{listTitle}</h2>
+					{headerAction}
+				</div>
 			</header>
 			{isLoading ? (
 				<div className="flex-grow flex flex-col items-center justify-center p-4 rounded-b-lg">

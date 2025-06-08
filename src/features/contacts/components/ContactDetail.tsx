@@ -1,5 +1,6 @@
 import type React from 'react'
 import { memo } from 'react'
+import type { Contact } from '../../../../shared/types/Contact'
 import {
 	CityIcon,
 	CountryIcon,
@@ -7,7 +8,6 @@ import {
 	LocationIcon,
 	PhoneIcon,
 } from '../../../components/Icons'
-import type { Contact } from '../../../../shared/types/Contact'
 
 interface ContactDetailProps {
 	contact: Contact
@@ -61,21 +61,13 @@ const ContactDetail: React.FC<ContactDetailProps> = memo(({ contact }) => {
 					value={contact.email}
 					icon={EmailIcon}
 				/>
-				<InfoCard
-					title="Phone Number"
-					value={contact.phone}
-					icon={PhoneIcon}
-				/>
+				<InfoCard title="Phone Number" value={contact.phone} icon={PhoneIcon} />
 				<InfoCard
 					title="Full Address"
 					value={fullAddress}
 					icon={LocationIcon}
 				/>
-				<InfoCard
-					title="City"
-					value={contact.address.city}
-					icon={CityIcon}
-				/>
+				<InfoCard title="City" value={contact.address.city} icon={CityIcon} />
 				<InfoCard
 					title="Country"
 					value={contact.address.country}

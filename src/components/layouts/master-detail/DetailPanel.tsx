@@ -1,8 +1,8 @@
 import type React from 'react'
 import { memo } from 'react'
-import type { Identifiable } from './types'
 import { ArrowLeftIcon } from '../../Icons'
 import Spinner from '../../loader/Spinner'
+import type { Identifiable } from './types'
 
 interface DetailPanelProps<T extends Identifiable> {
 	selectedItem: T | null
@@ -13,6 +13,7 @@ interface DetailPanelProps<T extends Identifiable> {
 	isLoading?: boolean
 	showMobileHeader?: boolean
 	className?: string
+	headerAction?: React.ReactNode
 }
 
 const DetailPanel = <T extends Identifiable>({
@@ -24,6 +25,7 @@ const DetailPanel = <T extends Identifiable>({
 	isLoading = false,
 	showMobileHeader = true,
 	className = '',
+	headerAction,
 }: DetailPanelProps<T>): React.ReactNode => {
 	return (
 		<div className={`flex flex-col h-full ${className}`}>
@@ -48,9 +50,12 @@ const DetailPanel = <T extends Identifiable>({
 
 					{/* Desktop Header */}
 					<header className="flex-shrink-0 hidden lg:block bg-gray-50 p-4 border-b border-gray-200">
-						<h2 className="text-xl font-semibold text-gray-700">
-							{detailTitle}: {getItemTitle(selectedItem)}
-						</h2>
+						<div className="flex items-center justify-between">
+							<h2 className="text-xl font-semibold text-gray-700">
+								{detailTitle}: {getItemTitle(selectedItem)}
+							</h2>
+							{headerAction}
+						</div>
 					</header>
 
 					{/* Scrollable Content Area */}

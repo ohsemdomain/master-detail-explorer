@@ -1,7 +1,7 @@
 import type React from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import ProductForm from '../components/ProductForm'
+import { useNavigate, useParams } from 'react-router-dom'
 import type { Product } from '../../../../shared/types/Product'
+import ProductForm from '../components/ProductForm'
 
 const ProductFormPage: React.FC = () => {
 	const { id: _id } = useParams<{ id: string }>()

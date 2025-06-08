@@ -1,9 +1,9 @@
 import type React from 'react'
 import { memo } from 'react'
-import type { Identifiable } from './types'
 import DetailPanel from './DetailPanel'
 import ListPanel from './ListPanel'
 import PanelContainer from './PanelContainer'
+import type { Identifiable } from './types'
 
 interface MasterDetailLayoutProps<T extends Identifiable> {
 	items: T[]
@@ -21,6 +21,8 @@ interface MasterDetailLayoutProps<T extends Identifiable> {
 	getItemTitle: (item: T) => string
 	isLoadingItems?: boolean
 	isLoadingDetail?: boolean
+	headerAction?: React.ReactNode
+	detailHeaderAction?: React.ReactNode
 }
 
 const MasterDetailLayout = <T extends Identifiable>({
@@ -35,6 +37,8 @@ const MasterDetailLayout = <T extends Identifiable>({
 	getItemTitle,
 	isLoadingItems = false,
 	isLoadingDetail = false,
+	headerAction,
+	detailHeaderAction,
 }: MasterDetailLayoutProps<T>): React.ReactNode => {
 	const listPanel = (
 		<ListPanel
@@ -45,6 +49,7 @@ const MasterDetailLayout = <T extends Identifiable>({
 			listTitle={listTitle}
 			itemKeyExtractor={itemKeyExtractor}
 			isLoading={isLoadingItems}
+			headerAction={headerAction}
 		/>
 	)
 
@@ -56,6 +61,7 @@ const MasterDetailLayout = <T extends Identifiable>({
 			detailTitle={detailTitle}
 			getItemTitle={getItemTitle}
 			isLoading={isLoadingDetail}
+			headerAction={detailHeaderAction}
 		/>
 	)
 

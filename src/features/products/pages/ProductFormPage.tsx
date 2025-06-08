@@ -4,9 +4,9 @@ import type { Product } from '../../../../shared/types/Product'
 import ProductForm from '../components/ProductForm'
 
 const ProductFormPage: React.FC = () => {
-	const { id: _id } = useParams<{ id: string }>()
+	const { id } = useParams<{ id: string }>()
 	const navigate = useNavigate()
-	// TODO: Use id for edit mode
+	const isEditMode = Boolean(id)
 
 	const handleSave = (productData: Partial<Product>) => {
 		// TODO: Implement save logic
@@ -18,8 +18,18 @@ const ProductFormPage: React.FC = () => {
 		navigate('/products')
 	}
 
-	// TODO: Load product data if editing
-	const product = undefined // Will be loaded from API
+	// Mock product data for edit mode (in real app, this would be fetched from API)
+	const product: Product | undefined = isEditMode
+		? {
+				id: id!,
+				name: 'Sample Product',
+				description: 'This is a sample product for editing',
+				price: 99.99,
+				category: 'Electronics',
+				imageUrl: 'https://via.placeholder.com/300',
+				isActive: true,
+		  }
+		: undefined
 
 	return (
 		<div className="container mx-auto px-4 py-6">
